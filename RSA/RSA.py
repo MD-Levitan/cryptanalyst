@@ -589,7 +589,7 @@ def loadkeys(keys):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='RSA CTF Tool')
+    parser = argparse.ArgumentParser(description='RSA')
     parser.add_argument('--publickey', help='public key file. You can use wildcards for multiple keys.')
     parser.add_argument('--createpub', help='Take n and e from cli and just print a public key then exit', action='store_true')
     parser.add_argument('--dumpkey', help='Just dump the RSA variables from a key - n,e,d,p,q', action='store_true')
