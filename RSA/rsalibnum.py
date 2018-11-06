@@ -115,17 +115,29 @@ def primes(until):
 
 
 def isqrt(n):
-    """
-
-    :param n:
-    :return:
-    """
-    x = n
-    y = (x + n // x) // 2
-    while y < x:
+    if n == 0:
+        return 0
+    a, b = divmod(n.bit_length(), 2)
+    x = 2**(a+b)
+    while True:
+        y = (x + n//x)//2
+        if y >= x:
+            return x
         x = y
-        y = (x + n // x) // 2
-    return x
+
+
+# def isqrt(n):
+#     """
+#
+#     :param n:
+#     :return:
+#     """
+#     x = n
+#     y = (x + n // x) // 2
+#     while y < x:
+#         x = y
+#         y = (x + n // x) // 2
+#     return x
 
 
 def egcd(a, b):
@@ -134,21 +146,3 @@ def egcd(a, b):
     else:
         g, x, y = egcd(b % a, a)
         return g, y - (b // a) * x, x
-
-
-# Source - http://stackoverflow.com/a/20465181
-def fermat(n):
-    a = isqrt(n)
-    b2 = a*a - n
-    b = isqrt(n)
-    count = 0
-    while b*b != b2:
-        a = a + 1
-        b2 = a*a - n
-        b = isqrt(b2)
-        count += 1
-    p = a+b
-    q = a-b
-    assert n == p * q
-    return p, q
-

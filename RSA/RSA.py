@@ -457,7 +457,7 @@ class RSAAttack(object):
 
     def Pollard_p_1(self):
         # Pollard P minus 1 factoring, using the algorithm as described by https://math.berkeley.edu/~sagrawal/su14_math55/notes_pollard.pdf
-        from attacks.pollard_p_1_atttack import PollardP1Attack
+        from .attacks.pollard_p_1_attack import PollardP1Attack
 
         if not hasattr(self.pub_key, "p"):
             self.pub_key.p = None

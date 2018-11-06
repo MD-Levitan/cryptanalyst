@@ -1,5 +1,5 @@
 import math
-from ..rsalibnum import gcd
+from RSA.rsalibnum import gcd
 
 
 class PollardP1Attack(object):
